@@ -1,10 +1,12 @@
 - hosts: all
   tasks:
    - name: stop container
-     shell: docker container stop mydockercontainer
+     shell: docker container stop dockeransible
+
    - name: remove container
-     shell: docker container rm mydockercontainer
+     shell: docker container rm dockeransible
+
    - name: remove docker image
      shell: docker image rmi mohan03/test-deploy-app
    - name: create new container
-     shell: docker container run -itd --name mydockercontainer -p 9000:80 mohan03/test-deploy-app
+     shell: docker container run -itd --name dockeransible -p 9000:80 mohan03/test-deploy-app
